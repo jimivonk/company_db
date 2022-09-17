@@ -2,73 +2,61 @@
 
 // import * as React from 'react';
 // import './style.css';
-const todaysDate = new Date(2022, 9, 12)
+const todaysDate = new Date()
+const thisYear = 2022
 
-const employee1 = {
+const employees = [
+
+ {
     firstName: "Paul",
     lastName: "Daniels",
     DoB: "12/6/1958",
     age: 64,
-    
-     
+},
 
-
-    fullNameMerger: function() {
-        return this.firstName + " " + this.lastName
-        
-    },
-
-    retirementYear: function () {
-        const result = (this.age + 3) >= 65 ? true : false;
-        return result
-    },
-
-    getSummary: function() {
-        return `${this.fullName} is a ${this.age}- year old`
-    }
-};
-
-const employee2 = {
+ {
     firstName: "Reo",
     lastName: "Hatate",
     DoB: "12/06/1998",
     age: 24,
-} 
+}, 
 
-const employee3 = {
+ {
     firstName: "Jessica",
     lastName: "Rabbit",
     DoB: "12/06/1978",
     age: 44,
-} 
+}, 
      
-const employee4 = {
+{
     firstName: "Joe",
     lastName: "Hart",
     DoB: "12/06/1988",
     age: 34,
-} 
+}, 
      
-const employee5 = {
+{
     firstName: "Lady",
     lastName: "Madonna",
     DoB: "12/06/1957",
     age: 63,
 } 
-     
-employee1.retiredBy2025 = employee1.retirementYear();
-employee1.fullName = employee1.fullNameMerger();
-console.log(employee1)
-console.log(employee1.getSummary());
+];
+console.log(employees)
 
-employee2.fullNameMerger = employee1.fullNameMerger;
-employee2.fullName = employee2.fullNameMerger;
-employee2.retirementYear = employee1.retirementYear;
-employee2.retiredBy2025 = employee2.retirementYear();
-employee2.getSummary = employee1.getSummary
+//create function that loops through addin fullname
+console.log(employees[0].firstName, employees[0].lastName);
+for(let i = 0; i < employees.length; i++) {
+    // if (employees[i].fullName == false) 
+    employees[i].fullName = employees[i].firstName + " " + employees[i].lastName;
+}
 
-console.log(employee2)
-console.log(employee.getSummary());
+for(let i = 0; i < employees.length; i++) {
+    employees[i].retirementYear = 65 - employees[i].age + thisYear;
+    employees[i].retiredBy25 = employees[i].retirementYear <= 2025 ? true : false;
+}
+
+console.log(todaysDate)
 
 /**
  
@@ -86,7 +74,7 @@ called name which will be a combination of both
 
 
 * tell which users will be retiring in 2025 
-(if they are older then 65) Using filter
+(if git c are older then 65) Using filter
 
 
 
