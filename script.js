@@ -60,39 +60,61 @@ console.log(todaysDate)
 
 /**
  
-* Create a list of employees of a company,
-with first name, last name and age 
-
-*
-*
-*
+// * Create a list of employees of a company,
+// with first name, last name and age 
 
 
-* programatically create a new property 
-called name which will be a combination of both
+
+// * programatically create a new property 
+// called name which will be a combination of both
 
 
 
 * tell which users will be retiring in 2025 
-(if git c are older then 65) Using filter
-
-
-
+(if they are older then 65) Using filter
 * tell if today is going to be their birthday
 
+-follow tutorials on date function!! 
+-format date to include only mm/dd/yyyy
+-create filter program to return list of retirees by 2025
+-create function that compares mm/dd of DoB to current
+-- return happy birthday message on UI
 
 
 * tell who is on holidays and when they will 
 be back
+-create new array called holidayNow within employee records
+-first value is true or false, 2nd is return date
+-return array of holiday status and if on holiday return date
+?? map, filter or for?? 
 
+** could create object that stores all holiday dates
+-iterates through holidays confirmedAnnualLeave(2 value set with start date end date)
+and checks if current date is between said dates.
+-automatically updates holiday status
+-automatically calculates (let) remainingAnnualLeave 
+subtracting from global const totalAnnual
+
+***add code to ensure Saturdays and Sundays are not subtracted 
+from leave
 
 
 * tell if someone is on a sick leave
+- object sickRecord within employee record
+- boolean value
+
+--additional fuctionality similar to holiday, ie expected 
+return, doctorsNote, DNExpiry, total sick leave for period
+
+-- can create rules with automatic triggers 
+upon overstepping conditions
 
 
 
 * merge all these in one function that gives 
 a summary of employee's situation on the day
+
+-easy peasy
 
 
 
