@@ -2,61 +2,65 @@
 
 // import * as React from 'react';
 // import './style.css';
-const todaysDate = new Date()
-const thisYear = 2022
+const todaysDate = new Date();
+const thisYear = 2022;
 
-const employees = [
 
- {
+
+ const employee1 = {
     firstName: "Paul",
     lastName: "Daniels",
     DoB: "12/6/1958",
     age: 64,
-},
+};
 
- {
+ const employee2 = {
     firstName: "Reo",
     lastName: "Hatate",
     DoB: "12/06/1998",
     age: 24,
-}, 
+}; 
 
- {
+ const employee3 = {
     firstName: "Jessica",
     lastName: "Rabbit",
     DoB: "12/06/1978",
     age: 44,
-}, 
+}; 
      
-{
+const employee4 = {
     firstName: "Joe",
     lastName: "Hart",
     DoB: "12/06/1988",
     age: 34,
-}, 
+}; 
      
-{
+const employee5 = {
     firstName: "Lady",
     lastName: "Madonna",
     DoB: "12/06/1957",
     age: 63,
-} 
-];
-console.log(employees)
+}; 
 
+const employees = [employee1, employee2, employee3, employee4, employee5, ];
+console.log(employees)
+// console.log(employee1)
 //create function that loops through addin fullname
-console.log(employees[0].firstName, employees[0].lastName);
+// console.log(employees[0].firstName, employees[0].lastName);
 for(let i = 0; i < employees.length; i++) {
     // if (employees[i].fullName == false) 
     employees[i].fullName = employees[i].firstName + " " + employees[i].lastName;
 }
 
-for(let i = 0; i < employees.length; i++) {
-    employees[i].retirementYear = 65 - employees[i].age + thisYear;
-    employees[i].retiredBy25 = employees[i].retirementYear <= 2025 ? true : false;
-}
 
-console.log(todaysDate)
+// for(let i = 0; i < employees.length; i++) {
+//     employees[i].retirementYear = 65 - employees[i].age + thisYear;
+//     employees[i].retiredBy25 = employees[i].retirementYear <= 2025 ? true : false;
+// }
+const retireBy2025 = employees.filter(line => 2025 - thisYear + line.age >= 65) 
+
+// console.log(employees.age)
+console.log(retireBy2025)
 
 /**
  
@@ -70,8 +74,8 @@ console.log(todaysDate)
 
 
 
-* tell which users will be retiring in 2025 
-(if they are older then 65) Using filter
+// * tell which users will be retiring in 2025 
+// (if they are older then 65) Using filter
 * tell if today is going to be their birthday
 
 -follow tutorials on date function!! 
@@ -80,6 +84,8 @@ console.log(todaysDate)
 -create function that compares mm/dd of DoB to current
 -- return happy birthday message on UI
 
+
+//++COULD USE HIGHER ORDER FUNCTION FOR SICK AND HOLIDAY
 
 * tell who is on holidays and when they will 
 be back
