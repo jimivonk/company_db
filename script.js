@@ -2,22 +2,30 @@
 
 // import * as React from 'react';
 // import './style.css';
+
+// const thisYear = 2022;
+// console.log(todaysDate)
 const todaysDate = new Date();
-const thisYear = 2022;
+console.log(todaysDate)
 
-
-
- const employee1 = {
+const year = todaysDate.getFullYear();
+const month = `${todaysDate.getMonth()}`.padStart(2, 0);
+const day = `${todaysDate.getDay()}`.padStart(2, 0);
+const formatDate = `${day}/${month}/${year}`;
+console.log(formatDate);
+console.log(day, month, year)
+ 
+const employee1 = {
     firstName: "Paul",
     lastName: "Daniels",
-    DoB: "12/6/1958",
+    DoB: "12/06/1958",
     age: 64,
 };
 
  const employee2 = {
     firstName: "Reo",
     lastName: "Hatate",
-    DoB: "12/06/1998",
+    DoB: "01/08/1998",
     age: 24,
 }; 
 
@@ -49,7 +57,7 @@ console.log(employees)
 // console.log(employees[0].firstName, employees[0].lastName);
 for(let i = 0; i < employees.length; i++) {
     // if (employees[i].fullName == false) 
-    employees[i].fullName = employees[i].firstName + " " + employees[i].lastName;
+    employees[i].fullName = `${employees[i].firstName } ${employees[i].lastName}`;
 }
 
 
@@ -57,10 +65,38 @@ for(let i = 0; i < employees.length; i++) {
 //     employees[i].retirementYear = 65 - employees[i].age + thisYear;
 //     employees[i].retiredBy25 = employees[i].retirementYear <= 2025 ? true : false;
 // }
-const retireBy2025 = employees.filter(line => 2025 - thisYear + line.age >= 65) 
+const retireBy2025 = employees.filter(line => 2025 - year + line.age >= 65) 
 
 // console.log(employees.age)
 console.log(retireBy2025)
+
+// create function that returns date dd/mm
+const getDayMonth = function(date) {
+    const dayMonth = date
+    .split("/")
+    .filter(val => (val < 32))
+    .join("/");
+    // console.log(dayMonth)
+    return dayMonth
+}
+// getDayMonth(formatDate)
+// getDayMonth(employee1.DoB)
+
+const birthdayChecker = function(date1, date2, object) {
+    (date1 === date2) ?
+    console.log(`Happy Birthday ${object.firstName}🎉 Have a great day!!!`):
+    console.log(`Get back to work ${object.lastName}!!`)
+  };
+
+  for (const employee of employees) {
+    birthdayChecker(getDayMonth(employee.DoB), getDayMonth(formatDate), employee)
+  }
+//pass into higher function that compares 
+//and prints happy birthday message 
+
+
+
+
 
 /**
  
@@ -78,9 +114,9 @@ console.log(retireBy2025)
 // (if they are older then 65) Using filter
 * tell if today is going to be their birthday
 
--follow tutorials on date function!! 
--format date to include only mm/dd/yyyy
--create filter program to return list of retirees by 2025
+// -follow tutorials on date function!! 
+// -format date to include only mm/dd/yyyy
+// -create filter program to return list of retirees by 2025
 -create function that compares mm/dd of DoB to current
 -- return happy birthday message on UI
 
